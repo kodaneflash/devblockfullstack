@@ -9,6 +9,8 @@ const { AUTH_EMAIL, AUTH_PASSWORD } = process.env;
 
 let transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
+  port: 587, // Can also use 465 with secure: true
+  secure: false, // true for 465, false for other ports like 587
   auth: {
     user: AUTH_EMAIL,
     pass: AUTH_PASSWORD,
